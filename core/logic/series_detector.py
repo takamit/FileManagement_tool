@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from models.file_record import FileRecord
-from models.result_models import SeriesGroup
+from core.models.file_record import FileRecord
+from core.models.result_models import SeriesGroup
 
 
 class SeriesDetector:

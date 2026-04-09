@@ -10,15 +10,15 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk, font as tkfont
 from datetime import datetime
 
-from core.backup_manager import BackupManager
-from core.content_tools import read_text_preview
-from core.executor import execute_items
-from core.log_manager import LogManager
-from core.report_manager import ReportManager
-from core.runtime_control import OperationController
-from core.scanner import ScanItem, scan_folders
-from core.settings_manager import SettingsManager
-from core.utils import bytes_text
+from core.services.backup_manager import BackupManager
+from core.services.content_tools import read_text_preview
+from core.logic.file_manager_logic import execute_items
+from core.utils.log_manager import LogManager
+from core.services.report_manager import ReportManager
+from core.utils.runtime_control import OperationController
+from core.logic.file_manager_logic import ScanItem, scan_folders
+from core.services.settings_manager import SettingsManager
+from core.utils.formatters import bytes_text
 
 
 class ConfirmationDialog(tk.Toplevel):

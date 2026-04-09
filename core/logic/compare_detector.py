@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from core.hasher import compute_sha256
-from core.progress_service import ProgressService
-from models.file_record import FileRecord
-from models.result_models import DuplicateGroup, UpdateCandidate
+from core.utils.hasher import compute_sha256
+from core.utils.progress_service import ProgressService
+from core.models.file_record import FileRecord
+from core.models.result_models import DuplicateGroup, UpdateCandidate
 
 
 class CompareDetector:

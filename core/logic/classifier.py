@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from models.file_record import FileRecord
+from core.models.file_record import FileRecord
 
 
 class FileClassifier:

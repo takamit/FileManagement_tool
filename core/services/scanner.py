@@ -9,7 +9,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Callable, Iterable
 
-from .content_tools import read_text_preview
+from core.services.content_tools import read_text_preview
 
 VERSION_WORDS = ("v", "ver", "rev", "final", "fix", "更新", "修正", "改訂", "最新版", "最終", "最終版")
 TEXT_COMPARE_EXTS = {".txt", ".md", ".csv", ".json", ".py", ".log", ".ini", ".yaml", ".yml", ".docx", ".pdf"}

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from models.file_record import FileRecord
+from core.models.file_record import FileRecord
 
 
 @dataclass(slots=True)

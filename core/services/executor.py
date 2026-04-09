@@ -4,8 +4,8 @@ from typing import Callable, Iterable
 import shutil
 import os
 from send2trash import send2trash
-from .backup_manager import BackupManager
-from .runtime_control import OperationController
+from core.services.backup_manager import BackupManager
+from core.utils.runtime_control import OperationController
 
 def resolve_action(item) -> tuple[str, str]:
     if item.target_selected and item.compare_selected:
