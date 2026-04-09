@@ -1,28 +1,49 @@
 # FileManagement Tool
 
 ## 概要
-Python製のGUIファイル管理ツールです。  
-2つのフォルダ（対象 / 比較）を比較し、不要ファイルの削除・更新・整理を安全かつ効率的に行うことを目的としています。
+2つのフォルダを比較し、差分検出・削除・更新・整理を行う Python 製 GUI ツールです。
 
-## 主な機能
-- フォルダ再帰スキャン
-- UI非ブロッキング処理
-- ファイル差分分類
-- zip軽量解析
-- フィルタ・ソート・選択機能
-- 削除 / 更新処理
-- バックアップ / Undo対応
-- 進捗表示
+## 目的
+- フォルダ差分の把握
+- 不要ファイル削除の効率化
+- move ベースの安全な更新
+- バックアップ / Undo による保全
 
-## 主な分類
-- 同一ファイル
-- 更新候補
-- 同名同サイズ
-- 同名別内容
-- サイズ差分
+## 現在の推奨構成
+```text
+FileManagement_tool/
+├─ app/
+│  ├─ gui.py
+│  ├─ scanner.py
+│  ├─ executor.py
+│  └─ services.py
+├─ models/
+│  ├─ file_record.py
+│  └─ result_models.py
+├─ config/
+│  └─ classify_rules.json
+├─ docs/
+│  ├─ spec.md
+│  └─ refactor_map.md
+├─ main.py
+├─ requirements.txt
+├─ README.md
+└─ .gitignore
+```
 
 ## セットアップ
-
-### 1. 仮想環境の作成
-```bash
+```powershell
 python -m venv venv
+venv\Scripts\Activate.ps1
+python -m pip install -U pip
+pip install -r requirements.txt
+```
+
+## 実行
+```powershell
+python main.py
+```
+
+## 補足
+このパックは、既存実装をシンプルな構造へ寄せるための整理済みたたき台です。
+機能の入口・構成・責務分離を整えることを目的にしています。
