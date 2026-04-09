@@ -1,35 +1,10 @@
-# Python
+venv/
 __pycache__/
 *.py[cod]
-*$py.class
 
-# Virtual environment
-venv/
-.env/
-
-# Logs / generated files
 logs/
-*.log
 reports/
-output/
-build/
-dist/
-
-# Backup / history
 backup/
-backups/
 history/
 
-# Editor / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Local settings
 config/settings.json
-
-# Temp
-*.tmp
-*.bak
-*.swp
