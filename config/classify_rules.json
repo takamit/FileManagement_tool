@@ -1,0 +1,8 @@
+{
+  "Documents/MeetingNotes": ["議事録", "meeting", "minutes"],
+  "Documents/Specs": ["設計", "spec", "requirements"],
+  "Documents/Contracts": ["契約", "agreement"],
+  "Documents/Invoices": ["請求", "invoice"],
+  "Code/Python": [".py"],
+  "Media/Images": [".png", ".jpg", ".jpeg", ".webp"]
+}
