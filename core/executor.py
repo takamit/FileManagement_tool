@@ -38,24 +38,16 @@ def _move_replace_with_backup(source_path: str, target_path: str, backup_manager
         raise FileNotFoundError(f"更新先が見つかりません: {target_path}")
 
     backup_path = backup_manager.backup_file(session, target_path)
-    backup = Path(backup_path)
 
     try:
         target.unlink()
     except Exception as e:
-        raise RuntimeError(f"更新先ファイルを置き換えられませんでした: {e}") from e
+        raise RuntimeError(f"更新先ファイルを置き換えられませんでした: {e}")
 
     try:
         shutil.move(str(source), str(target))
     except Exception as e:
-        try:
-            if backup.exists() and not target.exists():
-                shutil.copy2(str(backup), str(target))
-        except Exception as restore_error:
-            raise RuntimeError(
-                f"ファイル移動による更新に失敗し、バックアップ復元にも失敗しました: {e} / restore: {restore_error}"
-            ) from restore_error
-        raise RuntimeError(f"ファイル移動による更新に失敗しましたが、バックアップから復元しました: {e}") from e
+        raise RuntimeError(f"ファイル移動による更新に失敗しました: {e}")
 
     backup_manager.add_entry(session, {
         "operation": "update",

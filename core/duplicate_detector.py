@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from app.hasher import compute_sha256
-from app.progress_service import ProgressService
+from core.hasher import compute_sha256
+from core.progress_service import ProgressService
 from models.file_record import FileRecord
 from models.result_models import DuplicateGroup
 

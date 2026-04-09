@@ -1,41 +1,13 @@
-# 安全な整理方針
+# refactor_plan
 
-## 結論
-前回のように骨格だけへ置換すると機能が消えるため、今回は**既存のモジュール分割を維持**する。
+## このパックで反映した修正
+- `app/gui.py` を `ui/gui.py` へ移設
+- `app/` のロジック群を `core/` へ移設
+- `main.py` の起動先を `ui.gui` に変更
+- `ui/` と `core/` の責務を明確化
+- `executor.py` の move 更新失敗時に、バックアップからの復元処理を追加
+- `README.txt`、`__pycache__`、`logs/`、`reports/`、`backup/`、`history/` などの生成物を除外
 
-## 今回やったこと
-- 既存の `app/`, `models/`, `ui/` を保持
-- 実行時生成物（logs, reports, backup, history, __pycache__）を除外
-- `README.md`, `docs/spec.md`, `.gitignore` を追加 / 整備
-- `app/executor.py` の更新処理だけ安全に修正
-
-## 次段階でやること
-1. `ui/` が実際に未使用かを確認
-2. `app/gui.py` を機能単位で分割
-3. scanner まわりの判定ロジックを整理
-4. 周辺管理クラスの統合を検討
-
-## ローカルの正しい構成
-```text
-FileManagement_tool/
-├─ app/
-├─ models/
-├─ config/
-├─ docs/
-├─ ui/
-├─ main.py
-├─ requirements.txt
-├─ README.md
-└─ .gitignore
-```
-
-## Git 管理から外すもの
-```text
-venv/
-__pycache__/
-logs/
-reports/
-backup/
-history/
-config/settings.json
-```
+## 注意
+- 既存機能維持を最優先にしているため、内部ロジックの大規模統合までは行っていない
+- まずはこの構造で動作確認し、その後に `core/` の再整理を行う
